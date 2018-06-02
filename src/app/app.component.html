@@ -6,7 +6,7 @@
 
 <div class="container" flex>
   <div>
-      <input type="file" style="display: none" #file (change)="browseText($event)"/>
+      <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
       <button type="button" class="btn" (click)="file.click()"> Upload </button>
       <input type="submit" value="Submit" (click)="copyText()">
       <input type="submit" value="Clear" (click)="clearText()">
