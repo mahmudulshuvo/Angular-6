@@ -4,10 +4,18 @@
 
 <div class="container" flex>
   <div>
+<<<<<<< HEAD
       <input type="file" style="display: none" #file (change)="browseText($event)"/>
       <button type="button" class="btn" (click)="file.click()"> Upload </button>
+=======
+        <!-- <input type="file" accept="text/plain" value = "Upload" multiple (change)='uploadText($event)'> -->
+      <input type="file" style="display: none" #file (change)="browseText($event)"/>
+      <button type="button" class="btn" (click)="file.click()"> Upload </button>
+      <!-- <input type="submit" value="Upload" (click)="browseText($event)"> -->
+>>>>>>> 50127a6819bc07a71081c7bf8b9e4b3a2c366a5d
       <input type="submit" value="Submit" (click)="copyText()">
       <input type="submit" value="Clear" (click)="clearText()">
+      <!-- <input id="file-upload" type="file" (change)="browseText($event)"> -->
 
   </div>
 
@@ -15,6 +23,10 @@
       <div fxFlex="100"> 
           <form action="/action_page.php" class="form">
             <textarea class="form-control" rows="15" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
+<<<<<<< HEAD
+=======
+              <!-- <input type="text" [(ngModel)]="sa" name="first" placeholder="Input your text here..." /> -->
+>>>>>>> 50127a6819bc07a71081c7bf8b9e4b3a2c366a5d
           </form>
       </div>
   </div>
@@ -23,12 +35,20 @@
       <div fxFlex="50"> 
           <form novalidate class="simple-form">
                 <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
+<<<<<<< HEAD
+=======
+              <!-- <input type="text" [(ngModel)]="ba" name="second"/> -->
+>>>>>>> 50127a6819bc07a71081c7bf8b9e4b3a2c366a5d
           </form>
       </div>
 
       <div fxFlex="50">
           <form novalidate class="simple-form">
                 <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
+<<<<<<< HEAD
+=======
+              <!-- <input type="text" [(ngModel)]="ba"  name="third"/> -->
+>>>>>>> 50127a6819bc07a71081c7bf8b9e4b3a2c366a5d
           </form>
       </div>
   </div>
