@@ -8,15 +8,21 @@
 
 <div class="container" flex>
   <div>
+        <!-- <input type="file" accept="text/plain" value = "Upload" multiple (change)='uploadText($event)'> -->
+      <input type="file" style="display: none" #file (change)="browseText($event)"/>
+      <button type="button" class="btn" (click)="file.click()"> Upload </button>
+      <!-- <input type="submit" value="Upload" (click)="browseText($event)"> -->
       <input type="submit" value="Submit" (click)="copyText()">
       <input type="submit" value="Clear" (click)="clearText()">
+      <!-- <input id="file-upload" type="file" (change)="browseText($event)"> -->
 
   </div>
 
   <div flex fxLayout="row" fxLayout.lt-sm="column" >
       <div fxFlex="100"> 
           <form action="/action_page.php" class="form">
-              <input type="text" [(ngModel)]="sa" name="first" placeholder="Input your text here..." />
+            <textarea class="form-control" rows="15" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
+              <!-- <input type="text" [(ngModel)]="sa" name="first" placeholder="Input your text here..." /> -->
           </form>
       </div>
   </div>
@@ -24,17 +30,27 @@
   <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap = "20px"> 
       <div fxFlex="50"> 
           <form novalidate class="simple-form">
-              <input type="text" [(ngModel)]="ba" name="second"/>
+                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
+              <!-- <input type="text" [(ngModel)]="ba" name="second"/> -->
           </form>
       </div>
 
       <div fxFlex="50">
           <form novalidate class="simple-form">
-              <input type="text" [(ngModel)]="ba"  name="third"/>
+                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
+              <!-- <input type="text" [(ngModel)]="ba"  name="third"/> -->
           </form>
       </div>
   </div>
 
-  <p id="demo"></p>
+  <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
+      <div fxFlex="50">
+            <p align="left" id="demo"></p>
+      </div>
+      <div fxFlex="50">
+            <p align="right" >This is some text in a paragraph.</p>
+      </div>
+  </div>
+
 </div>
 
