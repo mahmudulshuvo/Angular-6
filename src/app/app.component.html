@@ -1,47 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
 
-    <!--Browse and Upload content-->
+<div>
+    <nav flex fxLayout="row" fxLayout.lt-sm="column" fxlayout.lt-md="column">
+        <a routerLink="">Test UI</a>
+        <a routerLink="adminui">Admin UI</a>
+        <a routerLink="logs">Logs</a>
+        <a routerLink="stats">Stats</a>
+    </nav>
 </div>
+<router-outlet></router-outlet>
 
-<div class="container" flex>
-  <div>
-      <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
-      <button type="button" class="btn" (click)="file.click()"> Upload </button>
-      <input type="submit" value="Submit" (click)="copyText()">
-      <input type="submit" value="Clear" (click)="clearText()">
-  </div>
-
-  <div flex fxLayout="row" fxLayout.lt-sm="column" >
-      <div fxFlex="100"> 
-          <form action="/action_page.php" class="form">
-            <textarea class="form-control" rows="15" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
-          </form>
-      </div>
-  </div>
-
-  <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap = "20px"> 
-      <div fxFlex="50"> 
-          <form novalidate class="simple-form">
-                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
-          </form>
-      </div>
-
-      <div fxFlex="50">
-          <form novalidate class="simple-form">
-                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
-          </form>
-      </div>
-  </div>
-
-  <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <div fxFlex="50">
-            <p align="left" id="demo"></p>
-      </div>
-      <div fxFlex="50">
-            <p align="right" >This is some text in a paragraph.</p>
-      </div>
-  </div>
-
-</div>
 
