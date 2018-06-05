@@ -1,14 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-nav {
+ nav {
     background: #222122;
     padding-left: 20px;
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
     /* padding-left: 40px; */
 }
-
+/* 
 a {
     color: aliceblue;
     padding: 20px;
@@ -19,6 +19,75 @@ a:hover {
     color: aqua;
 }
 
-a:active {
+a:focus {
+    color: rgb(130, 133, 133);
+}  */
+.intro {
+    min-height: 9.5vh;
+    display: flex;
+}
+
+.navbar {
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #222122;
+    color: #FFF;
+    /* padding: 20px; */
+    padding: 10px 20px 10px 20px; 
+    font-size: 1.4em;
+    border: 0;
+}
+
+.navbar-brand {
+    float: left;
+    min-height: 55px;
+    font-size: 1.4em;
+    /* padding: 0 20px 5px; */
+}
+
+.navbar-brand:hover {
+    color: aqua  !important;
+}
+
+.navbar-brand:focus {
+    color: rgb(130, 133, 133) !important;
+}
+
+ .navbar-nav > li >a {
+    color: aliceblue;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.navbar-nav > li > a:hover {
     color: aqua;
 }
+
+.navbar-nav > li > a:focus {
+    color: rgb(130, 133, 133);
+}  
+
+/* .navbar-toggler {
+    box-align: right;
+} */
+/* .navbar-toggler-icon {
+    color: #FFF;
+}  */
+
+/* @media (max-width: 769px) {
+    nav .navbar-nav {
+      background-color: white;
+    }
+  } */
+
+
+
+/* .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+    color: #FFF;
+    /* background-color: #5E4485; */
+/*} */
+
+/* .navbar-inverse .navbar-nav li a {
+    color: #D5D5D5;
+} */

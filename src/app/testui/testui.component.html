@@ -1,42 +1,44 @@
-<div class="container">
-  <div>
-      <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
-      <button type="button" class="btn" (click)="file.click()"> Upload </button>
-      <button type="button" class="btn" (click)="copyText()"> Submit </button>
-      <button type="button" class="btn" (click)="clearText()"> Clear </button>
-      <!-- <input type="submit" value="Submit" (click)="copyText()">
-      <input type="submit" value="Clear" (click)="clearText()"> -->
-  </div>
-
-  <div flex fxLayout="row" fxLayout.lt-sm="column" >
-      <div fxFlex="100"> 
-          <form action="/action_page.php" class="form">
-            <textarea class="form-control" rows="15" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
-          </form>
+<div class="intro">
+    <div class="container-fluid">
+        <div> 
+            <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
+            <button type="button" class="btn" (click)="file.click()"> Upload </button>
+            <button type="button" class="btn" (click)="copyText()"> Submit </button>
+            <button type="button" class="btn" (click)="clearText()"> Clear </button>
+            <!-- <input type="submit" value="Submit" (click)="copyText()">
+            <input type="submit" value="Clear" (click)="clearText()"> -->
+        </div>
+      
+        <div flex fxLayout="row" fxLayout.lt-sm="column" >
+            <div fxFlex="100"> 
+                <form action="/action_page.php" class="form">
+                  <textarea class="form-control" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
+                </form>
+            </div>
+        </div>
+      
+        <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap = "20px"> 
+            <div fxFlex="50"> 
+                <form novalidate class="simple-form">
+                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                </form>
+            </div>
+      
+            <div fxFlex="50">
+                <form novalidate class="simple-form">
+                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                </form>
+            </div>
+        </div>
+      
+        <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
+            <div fxFlex="50">
+                  <p align="left" id="demo"></p>
+            </div>
+            <div fxFlex="50">
+                  <p align="right" >This is some text in a paragraph.</p>
+            </div>
+        </div>
+      
       </div>
-  </div>
-
-  <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap = "20px"> 
-      <div fxFlex="50"> 
-          <form novalidate class="simple-form">
-                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
-          </form>
-      </div>
-
-      <div fxFlex="50">
-          <form novalidate class="simple-form">
-                <textarea class="form-control" rows="15" [(ngModel)]="ba" name="ba"></textarea>
-          </form>
-      </div>
-  </div>
-
-  <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <div fxFlex="50">
-            <p align="left" id="demo"></p>
-      </div>
-      <div fxFlex="50">
-            <p align="right" >This is some text in a paragraph.</p>
-      </div>
-  </div>
-
 </div>
