@@ -9,7 +9,7 @@
             <input type="submit" value="Clear" (click)="clearText()"> -->
         </div>
       
-        <div flex fxLayout="row" fxLayout.lt-sm="column" >
+        <!-- <div flex fxLayout="row" fxLayout.lt-sm="column" >
             <div fxFlex="100"> 
                 <form action="/action_page.php" class="form">
                   <textarea class="form-control" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
@@ -36,6 +36,41 @@
                   <p align="left" id="demo"></p>
             </div>
             <div fxFlex="50">
+                  <p align="right" >This is some text in a paragraph.</p>
+            </div>
+        </div> -->
+
+        
+
+
+
+        <div class="row" >
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <form action="/action_page.php" class="form">
+                  <textarea class="form-control" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
+                </form>
+            </div>
+        </div>
+      
+        <div class="row"> 
+            <div class="col-md-12 col-sm-12 col-lg-6"> 
+                <form novalidate class="simple-form">
+                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                </form>
+            </div>
+      
+            <div class="col-md-12 col-sm-12 col-lg-6">
+                <form novalidate class="simple-form">
+                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                </form>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                  <p align="left" id="demo"></p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
                   <p align="right" >This is some text in a paragraph.</p>
             </div>
         </div>
