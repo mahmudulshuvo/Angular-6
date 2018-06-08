@@ -14,7 +14,7 @@ export class TestuiComponent implements OnInit {
   ca = '';
   file: File;
   users$: Object;
-  jsonUrl = 'http://jsonplaceholder.typicode.com/users'; //public api for tesing json
+  jsonUrl = 'https://jsonplaceholder.typicode.com/users'; //public api for tesing json
 
   constructor(private data: DataService) { }
 
