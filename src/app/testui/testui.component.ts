@@ -11,6 +11,7 @@ export class TestuiComponent implements OnInit {
   title = 'Angular';
   sa = '';
   ba = '';
+  ca = '';
   file: File;
   users$: Object;
   jsonUrl = 'http://jsonplaceholder.typicode.com/users'; //public api for tesing json
