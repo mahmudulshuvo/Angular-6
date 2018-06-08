@@ -10,6 +10,8 @@ import { AdminuiComponent } from './adminui/adminui.component';
 import { LogsComponent } from './logs/logs.component';
 import { StatsComponent } from './stats/stats.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { StatsComponent } from './stats/stats.component';
     BrowserModule,
     AppRoutingModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

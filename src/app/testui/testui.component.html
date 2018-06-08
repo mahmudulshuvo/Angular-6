@@ -3,7 +3,7 @@
         <div> 
             <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
             <button type="button" class="btn" (click)="file.click()"> Upload </button>
-            <button type="button" class="btn" (click)="copyText()"> Submit </button>
+            <button type="button" class="btn" (click)="onSubmit()"> Submit </button>
             <button type="button" class="btn" (click)="clearText()"> Clear </button>
             <!-- <input type="submit" value="Submit" (click)="copyText()">
             <input type="submit" value="Clear" (click)="clearText()"> -->
@@ -61,7 +61,7 @@
       
             <div class="col-md-12 col-sm-12 col-lg-6">
                 <form novalidate class="simple-form">
-                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                      <textarea class="form-control" [(ngModel)]="ca" name="ba"></textarea>
                 </form>
             </div>
         </div>

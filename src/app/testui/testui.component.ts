@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-testui',
@@ -10,10 +12,21 @@ export class TestuiComponent implements OnInit {
   sa = '';
   ba = '';
   file: File;
+  users$: Object;
+  jsonUrl = 'http://jsonplaceholder.typicode.com/users'; //public api for tesing json
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit() {
+    this.data.getUsers(this.jsonUrl).subscribe(
+      data => {
+        this.users$ = data ;
+        var value = JSON.stringify(this.users$);
+        this.ba = value;
+       }
+    )
   }
 
   copyText() {
