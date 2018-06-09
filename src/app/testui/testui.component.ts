@@ -21,11 +21,11 @@ export class TestuiComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    console.log("json api & table")
+    console.log("pretty print json")
     this.data.getUsers(this.jsonUrl).subscribe(
       data => {
         this.users$ = data ;
-        var value = JSON.stringify(this.users$);
+        var value = JSON.stringify(this.users$,null,2);
         this.ba = value;
        }
     )
