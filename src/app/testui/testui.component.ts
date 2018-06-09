@@ -21,6 +21,7 @@ export class TestuiComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
+    console.log("json api & table")
     this.data.getUsers(this.jsonUrl).subscribe(
       data => {
         this.users$ = data ;

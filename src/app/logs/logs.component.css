@@ -8,12 +8,16 @@
     /* border-radius: 5px; */
     width: 100%;
     min-height: 100%;
-    background-color: #6d3030;
+    background-color: #faf5f5;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
     /* margin-left: %;
     margin-right: 5%; */
+}
+
+.table-hover tr:hover td{
+    background-color: aquamarine;
 }
 
 .btn {
