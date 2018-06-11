@@ -21,7 +21,7 @@ export class TestuiComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    console.log('Website Changes');
+    console.log('Font Changes');
   }
 
   onSubmit() {
@@ -65,7 +65,7 @@ export class TestuiComponent implements OnInit {
 
   onClickLeft(e) {
     if(e.target.checked) {
-      
+
     }
     console.log("left checkbox checked")
     if (this.ba == '') {
