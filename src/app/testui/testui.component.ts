@@ -21,7 +21,7 @@ export class TestuiComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    console.log('Font Changes');
+    console.log('Add padding');
   }
 
   onSubmit() {
