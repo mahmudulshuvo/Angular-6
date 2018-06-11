@@ -77,6 +77,12 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.timeLabel {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    font-size: 17px;
+}
+
 .intro {
     min-height: 90.5vh;
     display: flex;
