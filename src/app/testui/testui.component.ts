@@ -14,22 +14,114 @@ export class TestuiComponent implements OnInit {
   ca = '';
   file: File;
   users$: Object;
-  jsonUrl = 'https://jsonplaceholder.typicode.com/users/'; //public api for tesing json
+  jsonUrl = 'https://jsonplaceholder.typicode.com/users'; //public api for tesing json
+  leftUrl = 'https://jsonplaceholder.typicode.com/users';
+  rightUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private data: DataService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('Website Changes');
+  }
 
   onSubmit() {
-    console.log("pretty print json")
-    this.data.getUsers(this.jsonUrl).subscribe(
-      data => {
-        this.users$ = data ;
-        var value = JSON.stringify(this.users$,null,2);
-        this.ba = value;
-       }
-    )
+   
+    var leftCheckBox = <HTMLInputElement> document.getElementById("leftCheckbox");
+    var rightCheckBox =  <HTMLInputElement> document.getElementById("rightCheckBox");
+    
+    if(leftCheckBox.checked) {
+      var t0 = performance.now();
+      this.data.getUsers(this.leftUrl).subscribe(
+        data => {
+          this.users$ = data ;
+          var value = JSON.stringify(this.users$,null,2);
+          // value = this.syntaxHighlight(value);
+          this.ba = value;
+         }
+        )
+        var t1 = performance.now();
+        var time = parseFloat((Math.ceil(t1-t0) * 100).toString()) / 100;
+        
+        //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+        document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
+    }
+
+    if(rightCheckBox.checked) {
+      var t0 = performance.now();
+      this.data.getUsers(this.rightUrl).subscribe(
+        data => {
+          this.users$ = data ;
+          var value = JSON.stringify(this.users$,null,2);
+          // value = this.syntaxHighlight(value);
+          this.ca = value;
+         }
+        )
+        var t1 = performance.now();
+        var time = parseFloat((Math.ceil(t1-t0) * 100).toString()) / 100;
+        //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+        document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
+    }
   }
+
+  onClickLeft(e) {
+    if(e.target.checked) {
+      
+    }
+    console.log("left checkbox checked")
+    if (this.ba == '') {
+      this.data.getUsers(this.leftUrl).subscribe(
+        data => {
+          this.users$ = data ;
+          var value = JSON.stringify(this.users$,null,2);
+          // value = this.syntaxHighlight(value);
+          this.ba = value;
+         }
+      )
+    }
+    else {
+      this.ba = '';
+    }
+
+  }
+
+  onClickRight() {
+    console.log("right checkbox checked")
+    if (this.ca == '') {
+      this.data.getUsers(this.rightUrl).subscribe(
+        data => {
+          this.users$ = data ;
+          var value = JSON.stringify(this.users$,null,2);
+          // value = this.syntaxHighlight(value);
+          this.ca = value;
+         }
+      )
+    }
+    else {
+      this.ca = '';
+    }
+  }
+
+  syntaxHighlight(json) {
+    if (typeof json != 'string') {
+         json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
 
   copyText() {
     if (!this.sa) {
@@ -43,8 +135,9 @@ export class TestuiComponent implements OnInit {
 
   clearText() {
     document.getElementById("demo").innerHTML = "Clear text!"
-    this.sa = undefined;
-    this.ba = undefined;
+    this.sa = '';
+    this.ba = '';
+    this.ca = '';
   }
 
   browseText(file) {

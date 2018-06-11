@@ -5,6 +5,24 @@
             <button type="button" class="btn" (click)="file.click()"> Upload </button>
             <button type="button" class="btn" (click)="onSubmit()"> Submit </button>
             <button type="button" class="btn" (click)="clearText()"> Clear </button>
+
+            <!-- <input id="checkbox" type="checkbox"/><label for="checkbox">Left</label>
+            <input id="checkbox" type="checkbox"/><label for="checkbox">Right</label> -->
+
+            <label class="checkbox-inline">
+                <input type="checkbox" id="leftCheckbox" value="" checked="checked">Left
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="rightCheckBox" value="">Right
+            </label>
+
+            <!-- <label class="checkbox-inline">
+                <input type="checkbox" id="leftCheckbox" value="" checked="checked" (change)="onClickLeft($event)">Left
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="rightCheckBox" value="">Right
+            </label> -->
+
             <!-- <input type="submit" value="Submit" (click)="copyText()">
             <input type="submit" value="Clear" (click)="clearText()"> -->
         </div>
@@ -51,6 +69,15 @@
                 </form>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <p id="timeLeft">Time taken:</p>
+            </div>
+            <div class="col-sm-6">
+                <p id="timeRight">Time taken:</p>
+            </div>
+        </div>
       
         <div class="row"> 
             <div class="col-md-12 col-sm-12 col-lg-6"> 
@@ -70,9 +97,9 @@
             <div class="col-sm-12 col-md-12 col-lg-6">
                   <p align="left" id="demo"></p>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-6">
+            <!-- <div class="col-sm-12 col-md-12 col-lg-6">
                   <p align="right" >This is some text in a paragraph.</p>
-            </div>
+            </div> -->
         </div>
       
       </div>
