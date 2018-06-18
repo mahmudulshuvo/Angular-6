@@ -34,20 +34,4 @@ export class DataService {
     })
   }
 
-  // createPost(url : string) {
-  //   this.http.post(url, {
-  //     title: 'foo',
-  //     body: 'bar',
-  //     userId: 1
-  //   })
-  //     .subscribe(
-  //       res => {
-  //         console.log(res);
-  //       },
-  //       err => {
-  //         console.log("Error occured");
-  //       }
-  //     );
-  // }
-
 }
