@@ -17,6 +17,7 @@ export class TestuiComponent implements OnInit {
   jsonUrl = 'https://jsonplaceholder.typicode.com/users'; //public api for tesing json
   leftUrl = 'https://jsonplaceholder.typicode.com/users';
   rightUrl = 'https://jsonplaceholder.typicode.com/posts';
+  post = 'http://jsonplaceholder.typicode.com/posts';
 
   constructor(private data: DataService) { }
 
@@ -61,6 +62,18 @@ export class TestuiComponent implements OnInit {
         //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
         document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
+    
+    this.data.createPost(this.post).subscribe(
+      res => {
+        console.log(res);
+        var value = JSON.stringify(res,null,2);
+        // value = this.syntaxHighlight(value);
+        this.ca = value;
+      },
+      err => {
+        console.log("Error occured");
+      }
+    );
   }
 
   onClickLeft(e) {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TestuiComponent } from './testui/testui.component'
 // import { Observable } from 'rxjs';
 // import { Response } from '@angular/http';
 // import 'rxjs/add/operator/map';
@@ -24,5 +25,29 @@ export class DataService {
     //   return response;
     //  }));
   }
+
+  createPost(url : string) {
+    return this.http.post(url, {
+      title: 'Test',
+      body: 'Post',
+      userId: 1
+    })
+  }
+
+  // createPost(url : string) {
+  //   this.http.post(url, {
+  //     title: 'foo',
+  //     body: 'bar',
+  //     userId: 1
+  //   })
+  //     .subscribe(
+  //       res => {
+  //         console.log(res);
+  //       },
+  //       err => {
+  //         console.log("Error occured");
+  //       }
+  //     );
+  // }
 
 }
