@@ -11,6 +11,7 @@ import { LogsComponent } from './logs/logs.component';
 import { StatsComponent } from './stats/stats.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

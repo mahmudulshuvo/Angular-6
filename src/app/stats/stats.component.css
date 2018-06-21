@@ -8,12 +8,16 @@
     /* border-radius: 5px; */
     width: 100%;
     min-height: 100%;
-    background-color: #8f4228;
+    background-color: #d4533a;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
     /* margin-left: %;
     margin-right: 5%; */
+}
+
+.forms {
+    padding-left:10px; 
 }
 
 .btn {
@@ -49,4 +53,26 @@
     box-sizing: border-box;
     /* font-size: 14px; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+label {
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    text-align: left;
+    width: 8%;
+}
+
+.form-group {
+    margin-right: 30px;
+}
+.col-form-label {
+    margin-right: 20px;
+}
+
+.inputField {
+    width: 30%;
+}
+
+.dateField {
+    width: 10%;
 }

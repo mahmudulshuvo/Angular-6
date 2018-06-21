@@ -8,7 +8,8 @@
     /* border-radius: 5px; */
     width: 100%;
     min-height: 100%;
-    background-color: #faf5f5;
+    /* background-color: #faf5f5; */
+    background-color: #5b5b5b;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
@@ -17,7 +18,7 @@
 }
 
 .table-hover tr:hover td{
-    background-color: aquamarine;
+    background-color: #8d8a8a;
 }
 
 .btn {

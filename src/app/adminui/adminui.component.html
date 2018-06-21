@@ -1,31 +1,49 @@
-
 <div class="intro">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-        <div class="row text-center">
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <button type="button" class="btn"> Button </button>
-          </div>
-      
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <button type="button" class="btn"> Button </button>
-          </div>
-      
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <button type="button" class="btn"> Button </button>
-          </div> 
-      
-        </div>
-
-
-        <div class="row" >
-            <div class="col-md-12 col-sm-12 col-lg-12">
-                <form action="/action_page.php" class="form">
-                  <textarea class="form-control"></textarea>
-                </form>
-            </div>
-        </div>
-      
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <label class="radio-inline">
+          <input name="radioGroup" id="radio1" value="option1" type="radio" checked=""> One
+        </label>
+        <label class="radio-inline">
+          <input name="radioGroup" id="radio2" value="option2" type="radio"> Two
+        </label>
+        <label class="radio-inline">
+          <input name="radioGroup" id="radio3" value="option3" type="radio"> Three
+        </label>
       </div>
-</div>
+    </div>
 
+    <div>
+      <button type="button" class="btn" (click)="onClickOne()"> B-1 </button>
+      <button type="button" class="btn" (click)="onClickTwo()"> B-2 </button>
+    </div>
+
+
+    <!-- <div class="row text-center">
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <button type="button" class="btn"> Button </button>
+      </div>
+
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <button type="button" class="btn"> Button </button>
+      </div>
+
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <button type="button" class="btn"> Button </button>
+      </div>
+
+    </div> -->
+
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <form action="/action_page.php" class="form">
+          <textarea class="form-control" id="textArea"></textarea>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

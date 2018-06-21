@@ -1,7 +1,7 @@
 <div class="intro">
     <div class="container-fluid">
-        <div> 
-            <input type="file" accept=".txt,.json,.md"  style="display: none" #file (change)="browseText($event)"/>
+        <div>
+            <input type="file" accept=".txt,.json,.md" style="display: none" #file (change)="browseText($event)" />
             <button type="button" class="btn" (click)="file.click()"> Upload </button>
             <button type="button" class="btn" (click)="onSubmit()"> Submit </button>
             <button type="button" class="btn" (click)="clearText()"> Clear </button>
@@ -26,7 +26,33 @@
             <!-- <input type="submit" value="Submit" (click)="copyText()">
             <input type="submit" value="Clear" (click)="clearText()"> -->
         </div>
-      
+
+        <div class="center">
+
+
+            <file-drop customstyle="filedrop" id="drop-zone" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                <span>
+                    <font color="white">Drop files here</font>
+                </span>
+            </file-drop>
+
+
+            <!-- <div class="upload-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody class="upload-name-style">
+                        <tr *ngFor="let item of files; let i=index">
+                            <td><strong>{{ item.relativePath }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+
         <!-- <div flex fxLayout="row" fxLayout.lt-sm="column" >
             <div fxFlex="100"> 
                 <form action="/action_page.php" class="form">
@@ -58,14 +84,14 @@
             </div>
         </div> -->
 
-        
 
 
 
-        <div class="row" >
+
+        <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12">
                 <form action="/action_page.php" class="form">
-                  <textarea class="form-control" [(ngModel)]="sa" name="sa" placeholder="Input your text here..."></textarea>
+                    <textarea class="form-control" [(ngModel)]="topTextArea" name="topTextArea" placeholder="Input your text here..."></textarea>
                 </form>
             </div>
         </div>
@@ -78,31 +104,31 @@
                 <p class ="timeLabel" id="timeRight">Time taken:</p>
             </div>
         </div> -->
-      
-        <div class="row"> 
-            <div class="col-md-12 col-sm-12 col-lg-6"> 
-                <p class ="timeLabel" id="timeLeft">Time taken:</p>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-6">
+                <p class="timeLabel" id="timeLeft">Time taken:</p>
                 <form novalidate class="simple-form">
-                      <textarea class="form-control" [(ngModel)]="ba" name="ba"></textarea>
+                    <textarea class="form-control" [(ngModel)]="leftTextArea" name="leftTextArea"></textarea>
                 </form>
             </div>
-      
+
             <div class="col-md-12 col-sm-12 col-lg-6">
-                <p class ="timeLabel" id="timeRight">Time taken:</p>
+                <p class="timeLabel" id="timeRight">Time taken:</p>
                 <form novalidate class="simple-form">
-                      <textarea class="form-control" [(ngModel)]="ca" name="ba"></textarea>
+                    <textarea id="rightTextArea" class="form-control" [(ngModel)]="rightTextArea" name="rightTextArea"></textarea>
                 </form>
             </div>
         </div>
-      
+
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6">
-                  <p align="left" id="demo"></p>
+                <p align="left" id="demo"></p>
             </div>
             <!-- <div class="col-sm-12 col-md-12 col-lg-6">
                   <p align="right" >This is some text in a paragraph.</p>
             </div> -->
         </div>
-      
-      </div>
+
+    </div>
 </div>

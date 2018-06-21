@@ -26,10 +26,10 @@ export class DataService {
     //  }));
   }
 
-  createPost(url : string) {
+  createPost(url : string, value: string) {
     return this.http.post(url, {
       title: 'Test',
-      body: 'Post',
+      body: value,
       userId: 1
     })
   }
