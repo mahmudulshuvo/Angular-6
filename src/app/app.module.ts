@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,8 @@ import { StatsComponent } from './stats/stats.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FileDropModule } from 'ngx-file-drop';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdDatepickerPopup } from './stats/datepicker-popup';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FileDropModule } from 'ngx-file-drop';
     TestuiComponent,
     AdminuiComponent,
     LogsComponent,
-    StatsComponent
+    StatsComponent,
+    NgbdDatepickerPopup
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { FileDropModule } from 'ngx-file-drop';
     FlexLayoutModule,
     FormsModule,
     HttpClientModule,
-    FileDropModule
+    FileDropModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

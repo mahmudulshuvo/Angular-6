@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbdDatepickerPopup } from './datepicker-popup';
+
 
 @Component({
   selector: 'app-stats',
@@ -6,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats.component.css']
 })
 export class StatsComponent implements OnInit {
-
+  first = '';
+  second = '';
+  date = '';
   constructor() { }
 
   ngOnInit() {
   }
 
   onClickButton() {
-    var first = (<HTMLInputElement>document.getElementById("first")).value;
-    var second = (<HTMLInputElement>document.getElementById("second")).value;
-    var date = (<HTMLInputElement>document.getElementById("date")).value;
+    this.first = (<HTMLInputElement>document.getElementById("first")).value;
+    this.second = (<HTMLInputElement>document.getElementById("second")).value;
+    // this.date = (<HTMLInputElement>document.getElementById("date")).value;
     var mainTextArea = document.getElementById("mainTextArea");
-    mainTextArea.innerHTML = 'Input 1: ' + first + '\n' + "Input 2: " + second + '\n' + "Date: " + date;
+    mainTextArea.innerHTML = 'Input 1: ' + this.first + '\n' + "Input 2: " + this.second + '\n' + "Date: " + this.date;
+    //console.log(new NgbdDatepickerPopup().select);
   }
 }
