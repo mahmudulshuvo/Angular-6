@@ -26,13 +26,13 @@ export class TestuiComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    console.log('Replay');
+    console.log('New UI Change');
   }
 
   onSubmit() {
 
-    var leftCheckBox = <HTMLInputElement>document.getElementById("leftCheckbox");
-    var rightCheckBox = <HTMLInputElement>document.getElementById("rightCheckBox");
+    var leftCheckBox = <HTMLInputElement>document.getElementById("radio1");
+    var rightCheckBox = <HTMLInputElement>document.getElementById("radio2");
 
     if (leftCheckBox.checked) {
       var t0 = performance.now();
@@ -52,37 +52,44 @@ export class TestuiComponent implements OnInit {
     }
 
     if (rightCheckBox.checked) {
+      // var t0 = performance.now();
+      // this.data.getUsers(this.rightUrl).subscribe(
+      //   data => {
+      //     this.users$ = data;
+      //     var value = JSON.stringify(this.users$, null, 2);
+      //     // value = this.syntaxHighlight(value);
+      //     this.rightTextArea = value;
+      //   }
+      // )
+      // var t1 = performance.now();
+      // var time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
+      // //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
+      // document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
+
       var t0 = performance.now();
-      this.data.getUsers(this.rightUrl).subscribe(
-        data => {
-          this.users$ = data;
-          var value = JSON.stringify(this.users$, null, 2);
-          // value = this.syntaxHighlight(value);
-          this.rightTextArea = value;
-        }
-      )
+      for (var i = 0; i < this.postString.length; i++) {
+        this.data.createPost(this.post, this.postString[i]).subscribe(
+          res => {
+            console.log(res);
+            var value = JSON.stringify(res, null, 2);
+            console.log('value: ' + value)
+            // value = this.syntaxHighlight(value);
+            //var text = ((document.getElementById("rightTextArea") as HTMLInputElement).value);
+            //text += value;
+            this.rightTextArea += value;
+          },
+          err => {
+            console.log("Error occured");
+          }
+        );
+      }
       var t1 = performance.now();
       var time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
       //console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.")
       document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
 
-    for (var i = 0; i < this.postString.length; i++) {
-      this.data.createPost(this.post, this.postString[i]).subscribe(
-        res => {
-          console.log(res);
-          var value = JSON.stringify(res, null, 2);
-          console.log('value: ' + value)
-          // value = this.syntaxHighlight(value);
-          //var text = ((document.getElementById("rightTextArea") as HTMLInputElement).value);
-          //text += value;
-          this.rightTextArea += value;
-        },
-        err => {
-          console.log("Error occured");
-        }
-      );
-    }
+
     //this.ca = this.postString;
     // this.data.createPost(this.post,'Post').subscribe(
     //   res => {
@@ -174,6 +181,8 @@ export class TestuiComponent implements OnInit {
     this.rightTextArea = '';
     (document.getElementById("drop-zone") as HTMLInputElement).value = "";
     this.postString = [];
+    document.getElementById("timeRight").innerHTML = "Time taken: ";
+    document.getElementById("timeLeft").innerHTML = "Time taken: ";
 
   }
 

@@ -55,19 +55,24 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 label {
-    padding: 20px;
+    /* padding: 20px; */
+    padding-bottom: 30px; 
+    padding-left: 40px; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
     text-align: left;
     width: 8%;
+
 }
 
-.form-group {
+/* .form-group {
     margin-right: 30px;
+    
 }
+
 .col-form-label {
     margin-right: 20px;
-}
+} */
 
 .inputField {
     width: 30%;
