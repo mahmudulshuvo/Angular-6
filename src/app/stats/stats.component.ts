@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgbdDatepickerPopup } from './datepicker-popup';
+
 
 @Component({
   selector: 'app-stats',
@@ -7,16 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsComponent implements OnInit {
 
-  constructor() { }
+  @Input() name: string;
+  public selectedDate: Date;
+
+  first = '';
+  second = '';
+  date = '';
+  constructor() {
+    //this.selectedDate = new Date();
+
+  }
 
   ngOnInit() {
   }
 
   onClickButton() {
-    var first = (<HTMLInputElement>document.getElementById("first")).value;
-    var second = (<HTMLInputElement>document.getElementById("second")).value;
-    var date = (<HTMLInputElement>document.getElementById("date")).value;
+    this.first = (<HTMLInputElement>document.getElementById("first")).value;
+    this.second = (<HTMLInputElement>document.getElementById("second")).value;
+    // this.date = (<HTMLInputElement>document.getElementById("date")).value;
     var mainTextArea = document.getElementById("mainTextArea");
-    mainTextArea.innerHTML = 'Input 1: ' + first + '\n' + "Input 2: " + second + '\n' + "Date: " + date;
+    mainTextArea.innerHTML = 'Input 1: ' + this.first + '\n' + "Input 2: " + this.second + '\n' + "Date: " + this.selectedDate;
+    console.log(this.selectedDate);
+    //console.log(new NgbdDatepickerPopup().select);
   }
 }

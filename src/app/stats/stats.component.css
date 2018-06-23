@@ -65,6 +65,13 @@ label {
 
 }
 
+p {
+    font-size: 18px;
+    padding-top: 30px;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
 /* .form-group {
     margin-right: 30px;
     

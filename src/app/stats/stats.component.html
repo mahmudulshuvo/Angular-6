@@ -15,6 +15,11 @@
         <div class="col-sm-5">
           <input type="text" class="form-control" id="first" placeholder="First">
         </div>
+
+        <label class="col-sm-1 col-md-1 col-form-label">Third</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="third" placeholder="Third">
+        </div>
       </form>
 
 
@@ -23,17 +28,35 @@
         <div class="col-sm-5">
           <input type="text" class="form-control" id="second" placeholder="Second">
         </div>
+
+        <label class="col-sm-1 col-md-1 col-form-label">Fourth</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="fourth" placeholder="Fourth">
+        </div>
       </form>
 
 
       <form class="form-group row">
         <label class="col-sm-1 col-md-1 col-form-label">Date</label>
         <div class="col-sm-2">
-          <input type="text" class="form-control" id="date" placeholder="Date">
+          <ngbd-datepicker-popup [(ngModel)]="selectedDate" [ngModelOptions]="{standalone: true}"></ngbd-datepicker-popup>
+          <!-- <p align="center" id="demo">{{ selectedDate | date:'short' }}</p> -->
+          <!-- <input type="text" class="form-control" id="date" placeholder="Date"> -->
+        </div>
+
+        <div class="col-sm-3">
+          <!-- <input type="text" class="form-control" id="fifth" placeholder="Fifth"> -->
+        </div>
+
+        <label class="col-sm-1 col-md-1 col-form-label">Fifth</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="fifth" placeholder="Fifth">
+          <p align="center" id="demo">{{selectedDate}}</p>
         </div>
       </form>
 
     </div>
+
 
     <!-- <form>
       <div class="form-group form-inline row">
@@ -70,6 +93,9 @@
       </div>
 
 
+    </div> -->
+    <!-- <div class="row">
+      <p align="center" id="demo">Dynamic Label</p>
     </div> -->
 
     <button type="button" class="btn" (click)="onClickButton()"> Button </button>

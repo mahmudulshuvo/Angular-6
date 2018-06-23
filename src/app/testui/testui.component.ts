@@ -31,10 +31,10 @@ export class TestuiComponent implements OnInit {
 
   onSubmit() {
 
-    var leftCheckBox = <HTMLInputElement>document.getElementById("radio1");
-    var rightCheckBox = <HTMLInputElement>document.getElementById("radio2");
+    var leftRadio = <HTMLInputElement>document.getElementById("radio1");
+    var rightRadio = <HTMLInputElement>document.getElementById("radio2");
 
-    if (leftCheckBox.checked) {
+    if (leftRadio.checked) {
       var t0 = performance.now();
       this.data.getUsers(this.leftUrl).subscribe(
         data => {
@@ -51,7 +51,7 @@ export class TestuiComponent implements OnInit {
       document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
 
-    if (rightCheckBox.checked) {
+    if (rightRadio.checked) {
       // var t0 = performance.now();
       // this.data.getUsers(this.rightUrl).subscribe(
       //   data => {
