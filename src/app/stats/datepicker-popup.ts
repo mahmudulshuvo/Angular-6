@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { Component } from '@angular/core';
 // import { StatsComponent } from './stats.component';
 
@@ -74,6 +75,21 @@ export class NgbdDatepickerPopup implements ControlValueAccessor {
     // Write change back to parent
     onDateSelect(value: any) {
         this.onChange(new Date(value.year, value.month - 1, value.day));
+=======
+import { Component } from '@angular/core';
+import { StatsComponent } from './stats.component';
+
+@Component({
+    selector: 'ngbd-datepicker-popup',
+    templateUrl: './datepicker-popup.html'
+})
+export class NgbdDatepickerPopup {
+    model;
+
+    select(d) {
+        console.log(d);
+        // return d;
+>>>>>>> 0ed37bcc9cdb619955e020e2435354b93699a09c
     }
 
 }

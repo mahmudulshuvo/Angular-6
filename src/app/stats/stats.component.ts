@@ -17,8 +17,8 @@ export class StatsComponent implements OnInit {
   date = '';
   constructor() {
     //this.selectedDate = new Date();
-
   }
+
 
   ngOnInit() {
   }
