@@ -8,12 +8,13 @@ import { AppComponent } from './app.component';
 import { TestuiComponent } from './testui/testui.component';
 import { AdminuiComponent } from './adminui/adminui.component';
 import { LogsComponent } from './logs/logs.component';
-import { StatsComponent } from './stats/stats.component';
+import { ReplayComponent } from './replay/replay.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FileDropModule } from 'ngx-file-drop';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdDatepickerPopup } from './stats/datepicker-popup';
+import { NgbdDatepickerPopup } from './replay/datepicker-popup';
+
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { NgbdDatepickerPopup } from './stats/datepicker-popup';
     TestuiComponent,
     AdminuiComponent,
     LogsComponent,
-    StatsComponent,
+    ReplayComponent,
     NgbdDatepickerPopup
+
   ],
   imports: [
     BrowserModule,

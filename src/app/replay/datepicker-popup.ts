@@ -1,5 +1,4 @@
-// import { Component } from '@angular/core';
-// import { StatsComponent } from './stats.component';
+
 
 // new code starts
 import { Component, OnInit, forwardRef, Input } from '@angular/core';
@@ -12,7 +11,6 @@ export const DATEPICKER_VALUE_ACCESSOR = {
 };
 
 // new code ends
-
 @Component({
     selector: 'ngbd-datepicker-popup',
     templateUrl: './datepicker-popup.html',

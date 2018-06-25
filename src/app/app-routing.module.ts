@@ -3,32 +3,33 @@ import { Routes, RouterModule } from '@angular/router';
 import { TestuiComponent } from './testui/testui.component';
 import { AdminuiComponent } from './adminui/adminui.component';
 import { LogsComponent } from './logs/logs.component';
-import { StatsComponent } from './stats/stats.component';
+import { ReplayComponent } from './replay/replay.component';
+
 
 const routes: Routes = [
-  {
-    path: '',
-    component: TestuiComponent
-},
+    {
+        path: '',
+        component: TestuiComponent
+    },
 
-{
-    path: 'adminui',
-    component: AdminuiComponent
-},
+    {
+        path: 'adminui',
+        component: AdminuiComponent
+    },
 
-{
-    path: 'logs',
-    component: LogsComponent
-},
+    {
+        path: 'logs',
+        component: LogsComponent
+    },
 
-{
-    path: 'stats',
-    component: StatsComponent
-}
+    {
+        path: 'replay',
+        component: ReplayComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -6,22 +6,8 @@
     padding-left: 20px;
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
-    /* padding-left: 40px; */
-}
-/* 
-a {
-    color: aliceblue;
-    padding: 20px;
-    text-decoration: none;
 }
 
-a:hover {
-    color: aqua;
-}
-
-a:focus {
-    color: rgb(130, 133, 133);
-}  */
 .intro {
     min-height: 9.5vh;
     display: flex;
@@ -33,7 +19,6 @@ a:focus {
     border-radius: 0;
     background-color: #fff;
     color: #222122;
-    /* padding: 20px; */
     padding: 10px 20px 10px 20px; 
     font-size: 1.4em;
     border: 0;
@@ -43,7 +28,6 @@ a:focus {
     float: left;
     min-height: 55px;
     font-size: 1.4em;
-    /* padding: 0 20px 5px; */
 }
 
 .navbar-brand:hover {
@@ -58,12 +42,10 @@ a:focus {
     color: rgb(114, 114, 114);
     padding: 20px;
     text-decoration: none;
-    /* font-weight: bold; */
 }
 
 .navbar-nav > li > a:hover {
     color: #4edfd5;
-    /* font-weight: bold; */
 }
 
 .navbar-nav > li > a:focus {
@@ -71,26 +53,3 @@ a:focus {
     font-weight: bold;
 }  
 
-/* .navbar-toggler {
-    box-align: right;
-} */
-/* .navbar-toggler-icon {
-    color: #FFF;
-}  */
-
-/* @media (max-width: 769px) {
-    nav .navbar-nav {
-      background-color: white;
-    }
-  } */
-
-
-
-/* .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
-    color: #FFF;
-    /* background-color: #5E4485; */
-/*} */
-
-/* .navbar-inverse .navbar-nav li a {
-    color: #D5D5D5;
-} */

@@ -5,16 +5,12 @@
 }
 
 .container-fluid {
-    /* border-radius: 5px; */
     width: 100%;
     min-height: 100%;
-    /* background-color: #faf5f5; */
     background-color: #5b5b5b;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
-    /* margin-left: %;
-    margin-right: 5%; */
 }
 
 .table-hover tr:hover td{
@@ -46,12 +42,9 @@
   textarea {
     width: 100%;
     height: 65vh;
-    /* padding: 12px 20px; */
     margin: 8px 0;
     display: inline-block;
     border: 1px solid rgb(0, 0, 0);
-    /* border-radius: 4px; */
     box-sizing: border-box;
-    /* font-size: 14px; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
