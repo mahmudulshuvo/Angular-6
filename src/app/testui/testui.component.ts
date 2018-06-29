@@ -25,7 +25,7 @@ export class TestuiComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    console.log('New UI Change');
+    console.log('New UI');
   }
 
   onSubmit() {
