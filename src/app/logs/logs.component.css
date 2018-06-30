@@ -7,7 +7,8 @@
 .container-fluid {
     width: 100%;
     min-height: 100%;
-    background-color: #5b5b5b;
+    /* background-color: #5b5b5b; */
+    background-color: rgb(231, 236, 236);
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
@@ -48,3 +49,8 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+table {
+    margin-top: 50px; 
+    width: 100%;
+  }

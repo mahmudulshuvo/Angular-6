@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { UploadEvent, UploadFile, FileSystemEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-testui',
@@ -21,6 +22,8 @@ export class TestuiComponent implements OnInit {
   post = 'https://jsonplaceholder.typicode.com/posts';
   public files: UploadFile[] = [];
   postString = [];
+  selectedRadio = '1';
+
 
   constructor(private data: DataService) { }
 
@@ -30,10 +33,8 @@ export class TestuiComponent implements OnInit {
 
   onSubmit() {
 
-    var leftRadio = <HTMLInputElement>document.getElementById("radio1");
-    var rightRadio = <HTMLInputElement>document.getElementById("radio2");
 
-    if (leftRadio.checked) {
+    if (this.selectedRadio == '1') {
       var t0 = performance.now();
       this.data.getUsers(this.leftUrl).subscribe(
         data => {
@@ -48,7 +49,7 @@ export class TestuiComponent implements OnInit {
       document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
 
-    if (rightRadio.checked) {
+    if (this.selectedRadio == '2') {
       var t0 = performance.now();
       for (var i = 0; i < this.postString.length; i++) {
         this.data.createPost(this.post, this.postString[i]).subscribe(

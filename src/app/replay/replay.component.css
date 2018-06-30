@@ -81,7 +81,8 @@ p {
 .container-fluid {
     width: 100%;
     min-height: 100%;
-    background-color: azure;
+    /* background-color: azure; */
+    background-color: rgb(231, 236, 236);
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
