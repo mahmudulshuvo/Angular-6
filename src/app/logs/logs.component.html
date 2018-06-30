@@ -4,7 +4,7 @@
 
     <div flex fxLayout="row">
       <div fxFlex="33" fxLayoutAlign="center">
-        <button mat-raised-button [(ngModel)]="showHideBtn" (click)="changeStatus()" color="primary">{{showHide ? 'Hide':'Show'}}</button>
+        <button mat-raised-button (click)="changeStatus()" color="primary">{{showHide ? 'Hide':'Show'}}</button>
       </div>
       <div fxFlex="33" fxLayoutAlign="center">
         <button mat-raised-button color="primary">Button</button>
