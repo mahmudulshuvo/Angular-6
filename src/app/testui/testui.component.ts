@@ -28,7 +28,7 @@ export class TestuiComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    console.log('New UI Request');
+    console.log('New UI Request+log buttons gap fix');
   }
 
   onSubmit() {
