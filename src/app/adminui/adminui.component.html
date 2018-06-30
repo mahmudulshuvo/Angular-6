@@ -1,34 +1,6 @@
 <div class="intro">
   <div class="container-fluid">
 
-    <!-- <div class="row">
-      <div class="col-sm-12 col-md-4 col-lg-4">
-        <label class="radio-inline">
-          <input name="radioGroup" id="radio1" value="option1" type="radio" checked=""> One
-        </label>
-        <label class="radio-inline">
-          <input name="radioGroup" id="radio2" value="option2" type="radio"> Two
-        </label>
-        <label class="radio-inline">
-          <input name="radioGroup" id="radio3" value="option3" type="radio"> Three
-        </label>
-      </div>
-    </div>
-
-    <div>
-      <button type="button" class="btn" (click)="onClickOne()"> B-1 </button>
-      <button type="button" class="btn" (click)="onClickTwo()"> B-2 </button>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <form action="/action_page.php" class="form">
-          <textarea class="form-control" id="textArea"></textarea>
-        </form>
-      </div>
-    </div> -->
-
-
     <mat-radio-group fxLayoutGap="10px" class="radio" [(ngModel)]="selectedRadio" #radioGroup="matRadioGroup">
       <mat-radio-button value="1" [checked]="selectedRadio === '1'">One</mat-radio-button>
       <mat-radio-button value="2">Two</mat-radio-button>

@@ -1,20 +1,6 @@
 <div class="intro">
   <div class="container-fluid">
 
-    <!-- <div class="row text-center">
-      <div class="col-sm-12 col-md-4 col-lg-4">
-        <button type="button" class="btn" (click)="changeStatus()" id="button1"> Show </button>
-      </div>
-
-      <div class="col-sm-12 col-md-4 col-lg-4">
-        <button type="button" class="btn"> Button </button>
-      </div>
-
-      <div class="col-sm-12 col-md-4 col-lg-4">
-        <button type="button" class="btn"> Button </button>
-      </div>
-
-    </div> -->
 
     <div flex fxLayout="row">
       <div fxFlex="33" fxLayoutAlign="center">
@@ -28,23 +14,7 @@
       </div>
     </div>
 
-    <!-- <div class="table-responsive table-dark" *ngIf="showHide">
-      <table class="table table-striped table-hover">
-        <tr>
-          <th *ngFor="let col of columns">{{col}}</th>
-        </tr>
-        <tr *ngFor="let user of users$">
-          <td>{{user.id}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.username}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.website}}</td>
-        </tr>
-      </table>
-    </div> -->
-
     <table mat-table [dataSource]="users$" class="mat-elevation-z8" *ngIf="showHide">
-
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
