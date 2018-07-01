@@ -22,6 +22,8 @@ export class TestuiComponent implements OnInit {
   files: UploadFile[] = [];
   contentArray = [];
   selectedRadio = '1';
+  timeTakenLeft = '';
+  timeTakenRight = '';
 
 
   constructor(private data: DataService) { }

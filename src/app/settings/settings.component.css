@@ -45,7 +45,7 @@ button {
     float:none;
   }
 
-  textarea {
+textarea {
     width: 100%;
     height: 65vh;
     margin: 8px 0;
@@ -58,14 +58,14 @@ button {
 table {
     margin-top: 50px; 
     width: 100%;
-  }
+}
 
-  @media(max-width: 800px) {
+@media(max-width: 800px) {
     .responsive_table {
         overflow-x: auto !important;
     }
 
     .mat-table {
-        min-width:400px;
+        min-width:300px;
     }
 }

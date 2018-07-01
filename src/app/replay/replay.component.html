@@ -60,9 +60,9 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-lg-12">
+      <div fxFlex="100" class="mainTextArea">
         <form action="/action_page.php" class="form">
-          <textarea class="form-control" id="mainTextArea"></textarea>
+          <textarea class="form-control" id="mainTextArea" [(ngModel)]="mainTextArea" name="mainTextArea"></textarea>
         </form>
       </div>
     </div>

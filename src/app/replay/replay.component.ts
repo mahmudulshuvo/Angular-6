@@ -18,6 +18,7 @@ export class ReplayComponent implements OnInit {
   fifth = '';
   date = '';
   dynamicLabel = '';
+  mainTextArea = '';
   constructor() {
   }
 
@@ -28,8 +29,7 @@ export class ReplayComponent implements OnInit {
   onClickButton() {
     console.log('Button pressed ' + this.first + ' ' + this.second + ' ' + this.third + ' ' + this.fourth + ' ' + this.fifth + ' ' + this.date);
     this.dynamicLabel = this.date;
-    var mainTextArea = document.getElementById("mainTextArea");
-    mainTextArea.innerHTML = 'First: ' + this.first + '\n' + "Second: " + this.second + '\n' + "Third: " + this.third + '\n' + "Fourth: " + this.fourth + '\n' + "Fifth: " + this.fifth + '\n' + "Date: " + this.date;
+    this.mainTextArea = 'First: ' + this.first + '\n' + "Second: " + this.second + '\n' + "Third: " + this.third + '\n' + "Fourth: " + this.fourth + '\n' + "Fifth: " + this.fifth + '\n' + "Date: " + this.date;
   }
 
 }
