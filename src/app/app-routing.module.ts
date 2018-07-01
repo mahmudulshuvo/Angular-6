@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestuiComponent } from './testui/testui.component';
 import { AdminuiComponent } from './adminui/adminui.component';
-import { LogsComponent } from './logs/logs.component';
+//import { LogsComponent } from './logs/logs.component';
 import { ReplayComponent } from './replay/replay.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
@@ -18,8 +19,8 @@ const routes: Routes = [
     },
 
     {
-        path: 'logs',
-        component: LogsComponent
+        path: 'settings',
+        component: SettingsComponent
     },
 
     {

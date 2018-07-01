@@ -3,7 +3,7 @@
 
         <div flex fxLayout="row" fxLayoutAlign="start left">
             <div class="button-row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutGap="20px">
-                <input type="file" accept=".txt,.json,.md" style="display: none" #file (change)="browseText($event)" />
+                <input type="file" accept=".txt,.json,.md" style="display: none" #file (change)="browseFile($event)" />
                 <button mat-raised-button (click)="file.click()" color="primary">Upload</button>
                 <button mat-raised-button (click)="onSubmit()" color="primary">Submit</button>
                 <button mat-raised-button (click)="clearText()" color="primary">Clear</button>

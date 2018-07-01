@@ -17,11 +17,10 @@ export class TestuiComponent implements OnInit {
   file: File;
   users$: Object;
   jsonUrl = 'https://jsonplaceholder.typicode.com/users'; //public api for tesing json
-  leftUrl = 'https://jsonplaceholder.typicode.com/users';
-  rightUrl = 'https://jsonplaceholder.typicode.com/posts';
-  post = 'https://jsonplaceholder.typicode.com/posts';
-  public files: UploadFile[] = [];
-  postString = [];
+  getApi = 'https://jsonplaceholder.typicode.com/users';
+  postApi = 'https://jsonplaceholder.typicode.com/posts';
+  files: UploadFile[] = [];
+  contentArray = [];
   selectedRadio = '1';
 
 
@@ -35,27 +34,27 @@ export class TestuiComponent implements OnInit {
 
 
     if (this.selectedRadio == '1') {
-      var t0 = performance.now();
-      this.data.getUsers(this.leftUrl).subscribe(
+      let t0 = performance.now();
+      this.data.getUsers(this.getApi).subscribe(
         data => {
           this.users$ = data;
-          var value = JSON.stringify(this.users$, null, 2);
+          let value = JSON.stringify(this.users$, null, 2);
           // value = this.syntaxHighlight(value);
           this.leftTextArea = value;
         }
       )
-      var t1 = performance.now();
-      var time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
+      let t1 = performance.now();
+      let time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
       document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
 
     if (this.selectedRadio == '2') {
-      var t0 = performance.now();
-      for (var i = 0; i < this.postString.length; i++) {
-        this.data.createPost(this.post, this.postString[i]).subscribe(
+      let t0 = performance.now();
+      for (let i = 0; i < this.contentArray.length; i++) {
+        this.data.createPost(this.postApi, this.contentArray[i]).subscribe(
           res => {
             console.log(res);
-            var value = JSON.stringify(res, null, 2);
+            let value = JSON.stringify(res, null, 2);
             console.log('value: ' + value)
             this.rightTextArea += value;
           },
@@ -64,45 +63,14 @@ export class TestuiComponent implements OnInit {
           }
         );
       }
-      var t1 = performance.now();
-      var time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
+      let t1 = performance.now();
+      let time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
       document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
     }
 
 
   }
 
-  syntaxHighlight(json) {
-    if (typeof json != 'string') {
-      json = JSON.stringify(json, undefined, 2);
-    }
-    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-      var cls = 'number';
-      if (/^"/.test(match)) {
-        if (/:$/.test(match)) {
-          cls = 'key';
-        } else {
-          cls = 'string';
-        }
-      } else if (/true|false/.test(match)) {
-        cls = 'boolean';
-      } else if (/null/.test(match)) {
-        cls = 'null';
-      }
-      return '<span class="' + cls + '">' + match + '</span>';
-    });
-  }
-
-  copyText() {
-    if (!this.topTextArea) {
-      document.getElementById("demo").innerHTML = "Please input text!"
-    }
-    else {
-      document.getElementById("demo").innerHTML = "Copy text!"
-      this.leftTextArea = this.topTextArea;
-    }
-  }
 
   clearText() {
     document.getElementById("demo").innerHTML = "Clear text!"
@@ -110,22 +78,22 @@ export class TestuiComponent implements OnInit {
     this.leftTextArea = '';
     this.rightTextArea = '';
     (document.getElementById("drop-zone") as HTMLInputElement).value = "";
-    this.postString = [];
+    this.contentArray = [];
     document.getElementById("timeRight").innerHTML = "Time taken: ";
     document.getElementById("timeLeft").innerHTML = "Time taken: ";
 
   }
 
 
-  browseText(file) {
+  browseFile(file) {
     this.file = file.target.files[0];
 
     if (this.file != undefined) {
       document.getElementById("demo").innerHTML = this.file.name;
       console.log(this.file.name);
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.readAsText(this.file);
-      var me = this;
+      let me = this;
       reader.onload = function () {
         me.topTextArea = reader.result;
       }
@@ -143,15 +111,15 @@ export class TestuiComponent implements OnInit {
   public dropped(event: UploadEvent) {
 
     this.files = event.files;
-    var names = '';
-    var text = '';
+    let names = '';
+    let text = '';
     for (const droppedFile of event.files) {
 
       // Is it a file?
       if (droppedFile.fileEntry.isFile) {
         names += 'Reading -> ' + droppedFile.fileEntry.name + '\n';
 
-        var fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
+        let fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file(async (file: File) => {
 
           const readUploadedFileAsText = (inputFile) => {
@@ -173,7 +141,7 @@ export class TestuiComponent implements OnInit {
           try {
             console.log('passing files');
             const fileContents = await readUploadedFileAsText(file)
-            this.postString.push(fileContents.toString());
+            this.contentArray.push(fileContents.toString());
             fileEntry = null;
           } catch (e) {
             console.warn('error: ' + e.message)

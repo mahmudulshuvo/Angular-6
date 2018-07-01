@@ -95,7 +95,12 @@ p {
 mat-form-field {
     font-size: 16px; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+}
+
+button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 
 .btn {
     width: 100px;

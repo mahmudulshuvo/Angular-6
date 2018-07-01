@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestuiComponent } from './testui/testui.component';
 import { AdminuiComponent } from './adminui/adminui.component';
-import { LogsComponent } from './logs/logs.component';
 import { ReplayComponent } from './replay/replay.component';
+import { SettingsComponent } from './settings/settings.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FileDropModule } from 'ngx-file-drop';
@@ -21,15 +21,15 @@ import { MatNativeDateModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     TestuiComponent,
     AdminuiComponent,
-    LogsComponent,
     ReplayComponent,
+    SettingsComponent,
     NgbdDatepickerPopup
-
   ],
   imports: [
     BrowserModule,
