@@ -1,7 +1,7 @@
 <div class="intro">
     <div class="container-fluid">
 
-        <div flex fxLayout="row" fxLayoutAlign="start left">
+        <div class="button-radio-group" flex fxLayout="row" fxLayoutAlign="left">
             <div class="button-row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutGap="20px">
                 <input type="file" accept=".txt,.json,.md" style="display: none" #file (change)="browseFile($event)" />
                 <button mat-raised-button (click)="file.click()" color="primary">Upload</button>
@@ -18,7 +18,7 @@
 
         <div flex fxlayout="row">
             <div class="center">
-                <file-drop customstyle="filedrop" id="drop-zone" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                <file-drop id="drop-zone" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
                     <span>
                         <font color="gray">Drop files here</font>
                     </span>

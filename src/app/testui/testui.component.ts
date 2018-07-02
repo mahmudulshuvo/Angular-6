@@ -89,10 +89,11 @@ export class TestuiComponent implements OnInit {
 
   browseFile(file) {
     this.file = file.target.files[0];
+    console.log('file path: ' + file.target.value)
 
     if (this.file != undefined) {
       document.getElementById("demo").innerHTML = this.file.name;
-      console.log(this.file.name);
+      // console.log(this.file.name);
       let reader = new FileReader();
       reader.readAsText(this.file);
       let me = this;
@@ -119,7 +120,7 @@ export class TestuiComponent implements OnInit {
 
       // Is it a file?
       if (droppedFile.fileEntry.isFile) {
-        names += 'Reading -> ' + droppedFile.fileEntry.name + '\n';
+        names += 'Reading -> ' + droppedFile.fileEntry.name + ' Path ->' + droppedFile.relativePath + '\n';
 
         let fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file(async (file: File) => {

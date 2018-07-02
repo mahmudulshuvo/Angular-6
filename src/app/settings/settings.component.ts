@@ -13,12 +13,32 @@ export class SettingsComponent implements OnInit {
   columns = ['id', 'name', 'username', 'email', 'website'];
   showHide: boolean;
 
+  settings = {
+    columns: {
+      id: {
+        title: 'ID'
+      },
+      name: {
+        title: 'Full Name'
+      },
+      username: {
+        title: 'User Name'
+      },
+      email: {
+        title: 'Email'
+      },
+      website: {
+        title: 'Website'
+      }
+    }
+  };
+
   constructor(private data: DataService) {
-    this.showHide = false;
   }
 
   ngOnInit() {
     console.log('On Settings tab')
+    this.showHide = false
     this.data.getUsers(this.jsonUrl).subscribe(
       data => {
         this.users$ = data;

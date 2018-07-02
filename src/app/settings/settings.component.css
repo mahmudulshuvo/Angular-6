@@ -55,12 +55,14 @@ textarea {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-table {
+
+
+:host ::ng-deep ng2-smart-table table{
     margin-top: 50px; 
-    width: 100%;
 }
 
 @media(max-width: 800px) {
+    
     .responsive_table {
         overflow-x: auto !important;
     }

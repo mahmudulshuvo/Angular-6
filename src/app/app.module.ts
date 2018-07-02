@@ -19,6 +19,7 @@ import { MaterialModule } from './material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 
@@ -43,6 +44,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
+    Ng2SmartTableModule,
     NgbModule.forRoot(),
   ],
   providers: [],
