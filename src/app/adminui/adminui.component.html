@@ -1,24 +1,24 @@
 <div class="intro">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <mat-radio-group fxLayoutGap="10px" class="radio" [(ngModel)]="selectedRadio" #radioGroup="matRadioGroup">
-      <mat-radio-button value="1" [checked]="selectedRadio === '1'">One</mat-radio-button>
-      <mat-radio-button value="2">Two</mat-radio-button>
-      <mat-radio-button value="3">Three</mat-radio-button>
-    </mat-radio-group>
+        <mat-radio-group fxLayoutGap="10px" class="radio" [(ngModel)]="selectedRadio" #radioGroup="matRadioGroup">
+            <mat-radio-button value="1" [checked]="selectedRadio === '1'">One</mat-radio-button>
+            <mat-radio-button value="2">Two</mat-radio-button>
+            <mat-radio-button value="3">Three</mat-radio-button>
+        </mat-radio-group>
 
-    <div flex fxLayout="row" fxLayoutAlign="start left" fxLayoutGap="20px" class="button-group">
-      <button mat-raised-button (click)="onClickOne()" color="primary">First</button>
-      <button mat-raised-button (click)="onClickTwo()" color="primary">Second</button>
+        <div flex fxLayout="row" fxLayoutAlign="start left" fxLayoutGap="20px" class="button-group">
+            <button mat-raised-button (click)="onClickOne()" color="primary">First</button>
+            <button mat-raised-button (click)="onClickTwo()" color="primary">Second</button>
+        </div>
+
+        <div flex fxlayout="row">
+            <div fxFlex="100%">
+                <form action="/action_page.php" class="form">
+                    <textarea class="form-control" [(ngModel)]="textArea" name="textArea" placeholder=""></textarea>
+                </form>
+            </div>
+        </div>
+
     </div>
-
-    <div flex fxlayout="row">
-      <div fxFlex="100%">
-        <form action="/action_page.php" class="form">
-          <textarea class="form-control" [(ngModel)]="textArea" name="textArea" placeholder=""></textarea>
-        </form>
-      </div>
-    </div>
-
-  </div>
 </div>

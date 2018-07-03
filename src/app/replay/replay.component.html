@@ -1,71 +1,71 @@
 <div class="intro">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="20px">
-      <div fxFlex="50">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="First" [(ngModel)]="first">
-        </mat-form-field>
-      </div>
+        <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="20px">
+            <div fxFlex="50">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="First" [(ngModel)]="first">
+                </mat-form-field>
+            </div>
 
-      <div fxFlex="50">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Second" [(ngModel)]="second">
-        </mat-form-field>
-      </div>
+            <div fxFlex="50">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Second" [(ngModel)]="second">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
+            <div fxFlex="50">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Third" [(ngModel)]="third">
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Fourth" [(ngModel)]="fourth">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
+            <div fxFlex="50">
+                <mat-form-field class="example-datepicker">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Fifth" [(ngModel)]="fifth">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div flex flex-layout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column">
+            <div fxFlex="60">
+
+            </div>
+            <div fxFlex="40">
+                <p align="center" id="demo" [(ngModel)]="dynamicLabel" ngDefaultControl>{{this.dynamicLabel}}</p>
+            </div>
+
+        </div>
+
+        <div class="button-row">
+            <button mat-raised-button (click)="onClickButton()" color="primary">Result</button>
+        </div>
+
+        <div class="row">
+            <div fxFlex="100" class="mainTextArea">
+                <form action="/action_page.php" class="form">
+                    <textarea class="form-control" id="mainTextArea" [(ngModel)]="mainTextArea" name="mainTextArea"></textarea>
+                </form>
+            </div>
+        </div>
+
     </div>
-
-    <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <div fxFlex="50">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Third" [(ngModel)]="third">
-        </mat-form-field>
-      </div>
-
-      <div fxFlex="50">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Fourth" [(ngModel)]="fourth">
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div flex fxLayout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <div fxFlex="50">
-        <mat-form-field class="example-datepicker">
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
-
-      <div fxFlex="50">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Fifth" [(ngModel)]="fifth">
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div flex flex-layout="row" fxlayout.lt-sm="column" fxLayout.lt-md="column">
-      <div fxFlex="60">
-
-      </div>
-      <div fxFlex="40">
-        <p align="center" id="demo" [(ngModel)]="dynamicLabel" ngDefaultControl>{{this.dynamicLabel}}</p>
-      </div>
-
-    </div>
-
-    <div class="button-row">
-      <button mat-raised-button (click)="onClickButton()" color="primary">Result</button>
-    </div>
-
-    <div class="row">
-      <div fxFlex="100" class="mainTextArea">
-        <form action="/action_page.php" class="form">
-          <textarea class="form-control" id="mainTextArea" [(ngModel)]="mainTextArea" name="mainTextArea"></textarea>
-        </form>
-      </div>
-    </div>
-
-  </div>
 </div>

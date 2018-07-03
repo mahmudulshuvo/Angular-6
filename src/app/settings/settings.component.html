@@ -1,22 +1,22 @@
 <div class="intro">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
 
-    <div flex fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
-      <div fxFlex="33" fxLayoutAlign="center">
-        <button mat-raised-button (click)="changeStatus()" color="primary">{{showHide ? 'Hide':'Show'}}</button>
-      </div>
-      <div fxFlex="33" fxLayoutAlign="center">
-        <button mat-raised-button color="primary">Button</button>
-      </div>
-      <div fxFlex="33" fxLayoutAlign="center">
-        <button mat-raised-button color="primary">Button</button>
-      </div>
-    </div>
+        <div flex fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+            <div fxFlex="33" fxLayoutAlign="center">
+                <button mat-raised-button (click)="changeStatus()" color="primary">{{showHide ? 'Hide':'Show'}}</button>
+            </div>
+            <div fxFlex="33" fxLayoutAlign="center">
+                <button mat-raised-button color="primary">Button</button>
+            </div>
+            <div fxFlex="33" fxLayoutAlign="center">
+                <button mat-raised-button color="primary">Button</button>
+            </div>
+        </div>
 
-    <div class="responsive_table">
+        <div class="responsive_table">
 
-      <!-- <table mat-table [dataSource]="users$" class="mat-elevation-z8" *ngIf="showHide">
+            <!-- <table mat-table [dataSource]="users$" class="mat-elevation-z8" *ngIf="showHide">
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -51,10 +51,10 @@
       </table> -->
 
 
-      <ng2-smart-table [settings]="settings" [source]="users$" *ngIf="showHide"></ng2-smart-table>
+            <ng2-smart-table [settings]="settings" [source]="users$" *ngIf="showHide"></ng2-smart-table>
+        </div>
+
+
+
     </div>
-
-
-
-  </div>
 </div>

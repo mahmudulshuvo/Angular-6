@@ -24,30 +24,30 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TestuiComponent,
-    AdminuiComponent,
-    ReplayComponent,
-    SettingsComponent,
-    NgbdDatepickerPopup
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FlexLayoutModule,
-    FormsModule,
-    HttpClientModule,
-    FileDropModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
-    Ng2SmartTableModule,
-    NgbModule.forRoot(),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        TestuiComponent,
+        AdminuiComponent,
+        ReplayComponent,
+        SettingsComponent,
+        NgbdDatepickerPopup
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FlexLayoutModule,
+        FormsModule,
+        HttpClientModule,
+        FileDropModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatFormFieldModule,
+        Ng2SmartTableModule,
+        NgbModule.forRoot(),
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
