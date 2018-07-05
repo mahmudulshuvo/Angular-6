@@ -51,7 +51,8 @@
       </table> -->
 
 
-            <ng2-smart-table [settings]="settings" [source]="users$" *ngIf="showHide"></ng2-smart-table>
+            <ng2-smart-table [settings]="settings" [source]="users$" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)"
+                (createConfirm)="onCreateConfirm($event)" *ngIf="showHide"></ng2-smart-table>
         </div>
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
+
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
@@ -15,21 +16,32 @@ export class SettingsComponent implements OnInit {
 
     settings = {
         columns: {
-            id: {
-                title: 'ID'
+            SandboxName: {
+                title: 'Sand box Name'
             },
-            name: {
-                title: 'Full Name'
+            URL: {
+                title: 'URL'
             },
-            username: {
-                title: 'User Name'
+            Login: {
+                title: 'Login'
             },
-            email: {
-                title: 'Email'
-            },
-            website: {
-                title: 'Website'
+            Password: {
+                title: 'Password'
             }
+        },
+
+        add: {
+            confirmCreate: true
+        },
+
+
+        edit: {
+            confirmSave: true
+        },
+
+
+        delete: {
+            confirmDelete: true
         }
     };
 
@@ -37,17 +49,37 @@ export class SettingsComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('On Settings tab')
-        this.showHide = false
-        this.data.getUsers(this.jsonUrl).subscribe(
-            data => {
+        console.log('On Settings tab');
+        this.showHide = false;
+
+        if (this.data.globalObject === null || this.data.globalObject === undefined) {
+
+            this.data.getJSON().subscribe(data => {
                 this.users$ = data;
-            }
-        )
+            });
+
+        }
+        else {
+            this.users$ = this.data.globalObject;
+        }
     }
 
     changeStatus() {
-        console.log('on status change')
         this.showHide = !this.showHide;
+    }
+
+    onCreateConfirm(event): void {
+        event.confirm.resolve(event.newData);
+        this.data.globalObject = event.source.data;
+    }
+
+    onSaveConfirm(event): void {
+        event.confirm.resolve(event.newData);
+        this.data.globalObject = event.source.data;
+    }
+
+    onDeleteConfirm(event): void {
+        event.confirm.resolve(event.source.data);
+        setTimeout(() => this.data.globalObject = event.source.data, 10);
     }
 }
