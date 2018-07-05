@@ -1,0 +1,26 @@
+[
+  {
+    "SandboxName": "Leanne",
+    "URL": "173.103.1.1",
+    "Login": "Lean",
+    "Password": "Lean123"
+  },
+  {
+    "SandboxName": "John",
+    "URL": "173.103.1.2",
+    "Login": "John",
+    "Password": "John123"
+  },
+  {
+    "SandboxName": "Sia",
+    "URL": "173.103.1.3",
+    "Login": "Sia",
+    "Password": "Sia123"
+  },
+  {
+    "SandboxName": "Raul",
+    "URL": "173.103.1.4",
+    "Login": "Raul",
+    "Password": "Raul123"
+  }
+]
