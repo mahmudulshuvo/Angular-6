@@ -10,8 +10,6 @@ import { DataService } from '../data.service';
 export class SettingsComponent implements OnInit {
 
     users$: Object;
-    jsonUrl = 'https://jsonplaceholder.typicode.com/users/';
-    columns = ['id', 'name', 'username', 'email', 'website'];
     showHide: boolean;
 
     settings = {
@@ -53,11 +51,9 @@ export class SettingsComponent implements OnInit {
         this.showHide = false;
 
         if (this.data.globalObject === null || this.data.globalObject === undefined) {
-
             this.data.getJSON().subscribe(data => {
                 this.users$ = data;
             });
-
         }
         else {
             this.users$ = this.data.globalObject;

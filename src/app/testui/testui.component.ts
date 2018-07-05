@@ -16,7 +16,6 @@ export class TestuiComponent implements OnInit {
     rightTextArea = '';
     file: File;
     users$: Object;
-    jsonUrl = 'https://jsonplaceholder.typicode.com/users'; //public api for tesing json
     getApi = 'https://jsonplaceholder.typicode.com/users';
     postApi = 'https://jsonplaceholder.typicode.com/posts';
     files: UploadFile[] = [];
@@ -34,20 +33,18 @@ export class TestuiComponent implements OnInit {
 
     onSubmit() {
 
-
         if (this.selectedRadio == '1') {
             let t0 = performance.now();
             this.data.getUsers(this.getApi).subscribe(
                 data => {
                     this.users$ = data;
                     let value = JSON.stringify(this.users$, null, 2);
-                    // value = this.syntaxHighlight(value);
                     this.leftTextArea = value;
                 }
             )
             let t1 = performance.now();
             let time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
-            document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
+            document.getElementById("timeLeft").innerHTML = "Time taken: " + time.toFixed(2) + " ms.";
         }
 
         if (this.selectedRadio == '2') {
@@ -55,9 +52,7 @@ export class TestuiComponent implements OnInit {
             for (let i = 0; i < this.contentArray.length; i++) {
                 this.data.createPost(this.postApi, this.contentArray[i]).subscribe(
                     res => {
-                        console.log(res);
                         let value = JSON.stringify(res, null, 2);
-                        console.log('value: ' + value)
                         this.rightTextArea += value;
                     },
                     err => {
@@ -69,13 +64,10 @@ export class TestuiComponent implements OnInit {
             let time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
             document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
         }
-
-
     }
 
-
     clearText() {
-        document.getElementById("demo").innerHTML = "Clear text!"
+        document.getElementById("demo").innerHTML = "Clear text!";
         this.topTextArea = '';
         this.leftTextArea = '';
         this.rightTextArea = '';
@@ -86,14 +78,12 @@ export class TestuiComponent implements OnInit {
 
     }
 
-
     browseFile(file) {
         this.file = file.target.files[0];
         console.log('file path: ' + file.target.value)
 
         if (this.file != undefined) {
             document.getElementById("demo").innerHTML = this.file.name;
-            // console.log(this.file.name);
             let reader = new FileReader();
             reader.readAsText(this.file);
             let me = this;
@@ -110,9 +100,7 @@ export class TestuiComponent implements OnInit {
 
     }
 
-
     public dropped(event: UploadEvent) {
-
         this.files = event.files;
         let names = '';
         let text = '';
@@ -133,7 +121,6 @@ export class TestuiComponent implements OnInit {
                                 temporaryFileReader.abort();
                                 reject(new DOMException("Problem parsing input file."));
                             };
-
                             temporaryFileReader.onload = () => {
                                 resolve(temporaryFileReader.result);
                             };
@@ -149,12 +136,9 @@ export class TestuiComponent implements OnInit {
                     } catch (e) {
                         console.warn('error: ' + e.message)
                     }
-
                 });
 
-
             } else {
-                // It was a directory (empty directories are added, otherwise only files)
                 console.log('Enter into else statement event');
                 const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
                 console.log(droppedFile.relativePath, fileEntry);
@@ -162,7 +146,6 @@ export class TestuiComponent implements OnInit {
         }
         console.log('Test print here: ' + text);
         this.topTextArea = names;
-
     }
 
     public fileOver(event) {

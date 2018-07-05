@@ -22,7 +22,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,

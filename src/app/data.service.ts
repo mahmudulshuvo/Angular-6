@@ -6,12 +6,13 @@ import { Observable } from 'rxjs/Observable';
     providedIn: 'root'
 })
 export class DataService {
+
     globalObject: Object;
 
     constructor(private http: HttpClient) { }
 
     getUsers(url: string) {
-        return this.http.get(url)
+        return this.http.get(url);
     }
 
     createPost(url: string, value: string) {
@@ -23,7 +24,7 @@ export class DataService {
     }
 
     public getJSON(): Observable<any> {
-        return this.http.get("./assets/file.json")
+        return this.http.get("./assets/file.json");
     }
 
 }

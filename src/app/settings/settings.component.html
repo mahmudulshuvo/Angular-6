@@ -1,10 +1,9 @@
 <div class="intro">
     <div class="container-fluid">
 
-
         <div flex fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
             <div fxFlex="33" fxLayoutAlign="center">
-                <button mat-raised-button (click)="changeStatus()" color="primary">{{showHide ? 'Hide':'Show'}}</button>
+                <button mat-raised-button (click)="changeStatus()" color="primary">Sandbox</button>
             </div>
             <div fxFlex="33" fxLayoutAlign="center">
                 <button mat-raised-button color="primary">Button</button>
@@ -15,47 +14,9 @@
         </div>
 
         <div class="responsive_table">
-
-            <!-- <table mat-table [dataSource]="users$" class="mat-elevation-z8" *ngIf="showHide">
-
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="username">
-          <th mat-header-cell *matHeaderCellDef> Username </th>
-          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-        </ng-container>
-
-
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef> Email </th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="website">
-          <th mat-header-cell *matHeaderCellDef> Website </th>
-          <td mat-cell *matCellDef="let element"> {{element.website}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-      </table> -->
-
-
             <ng2-smart-table [settings]="settings" [source]="users$" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)"
-                (createConfirm)="onCreateConfirm($event)" *ngIf="showHide"></ng2-smart-table>
+                (createConfirm)="onCreateConfirm($event)"></ng2-smart-table>
         </div>
-
-
 
     </div>
 </div>
