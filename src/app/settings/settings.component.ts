@@ -32,11 +32,9 @@ export class SettingsComponent implements OnInit {
             confirmCreate: true
         },
 
-
         edit: {
             confirmSave: true
         },
-
 
         delete: {
             confirmDelete: true
