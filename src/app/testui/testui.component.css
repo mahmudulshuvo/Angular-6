@@ -127,16 +127,6 @@ mat-card-title {
       width: 100%;
   }
 
-:host ::ng-deep file-drop .drop-zone{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 24px;
-    border: 2px dotted #727272;
-    color: rgb(255, 255, 255);
-    border-radius: 30px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
 ::ng-deep  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
     border-color: orange;
 }

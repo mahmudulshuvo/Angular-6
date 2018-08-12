@@ -49,17 +49,15 @@ export class TestuiComponent implements OnInit {
 
         if (this.selectedRadio == '2') {
             let t0 = performance.now();
-            for (let i = 0; i < this.contentArray.length; i++) {
-                this.data.createPost(this.postApi, this.contentArray[i]).subscribe(
-                    res => {
-                        let value = JSON.stringify(res, null, 2);
-                        this.rightTextArea += value;
-                    },
-                    err => {
-                        console.log("Error occured");
-                    }
-                );
-            }
+            this.data.createPost(this.postApi, this.topTextArea).subscribe(
+                res => {
+                    let value = JSON.stringify(res, null, 2);
+                    this.rightTextArea += value;
+                },
+                err => {
+                    console.log("Error occured");
+                }
+            );
             let t1 = performance.now();
             let time = parseFloat((Math.ceil(t1 - t0) * 100).toString()) / 100;
             document.getElementById("timeRight").innerHTML = "Time taken: " + time.toFixed(2) + " ms."
@@ -83,7 +81,7 @@ export class TestuiComponent implements OnInit {
         console.log('file path: ' + file.target.value)
 
         if (this.file != undefined) {
-            document.getElementById("demo").innerHTML = this.file.name;
+            document.getElementById("demo").innerHTML = this.file.name + ' content:';
             let reader = new FileReader();
             reader.readAsText(this.file);
             let me = this;
@@ -98,68 +96,6 @@ export class TestuiComponent implements OnInit {
             console.log(this.file.name);
         }
 
-    }
-
-    public dropped(event: UploadEvent) {
-        this.files = event.files;
-        let names = '';
-        let text = '';
-        for (const droppedFile of event.files) {
-
-            // Is it a file?
-            if (droppedFile.fileEntry.isFile) {
-                names += 'Reading -> ' + droppedFile.fileEntry.name + ' Path ->' + droppedFile.relativePath + '\n';
-
-                let fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
-                fileEntry.file(async (file: File) => {
-
-                    const readUploadedFileAsText = (inputFile) => {
-                        const temporaryFileReader = new FileReader();
-
-                        return new Promise((resolve, reject) => {
-                            temporaryFileReader.onerror = () => {
-                                temporaryFileReader.abort();
-                                reject(new DOMException("Problem parsing input file."));
-                            };
-                            temporaryFileReader.onload = () => {
-                                resolve(temporaryFileReader.result);
-                            };
-                            temporaryFileReader.readAsText(inputFile);
-                        });
-                    };
-
-                    try {
-                        console.log('passing files');
-                        const fileContents = await readUploadedFileAsText(file)
-                        this.contentArray.push(fileContents.toString());
-                        fileEntry = null;
-                    } catch (e) {
-                        console.warn('error: ' + e.message)
-                    }
-                });
-
-            } else {
-                console.log('Enter into else statement event');
-                const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-                console.log(droppedFile.relativePath, fileEntry);
-            }
-        }
-        console.log('Test print here: ' + text);
-        this.topTextArea = names;
-    }
-
-    public fileOver(event) {
-        console.log(event);
-        event.files = null;
-        this.files = [];
-        (document.getElementById("drop-zone") as HTMLInputElement).value = "";
-    }
-
-    public fileLeave(event) {
-        event.files = null;
-        this.files = [];
-        (document.getElementById("drop-zone") as HTMLInputElement).value = "";
-        console.log(event);
     }
 
 }

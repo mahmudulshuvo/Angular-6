@@ -1,7 +1,7 @@
 <div class="intro">
     <div class="container-fluid">
 
-        <div class="button-radio-group" flex fxLayout="row" fxLayoutAlign="left">
+        <div class="button-radio-group mb-3" flex fxLayout="row" fxLayoutAlign="left">
             <div class="button-row" fxLayout.lg="row" fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutGap="20px">
                 <input type="file" accept=".txt,.json,.md" style="display: none" #file (change)="browseFile($event)" />
                 <button mat-raised-button (click)="file.click()" color="primary">Upload</button>
@@ -17,12 +17,8 @@
         </div>
 
         <div flex fxlayout="row">
-            <div class="center">
-                <file-drop id="drop-zone" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-                    <span>
-                        <font color="gray">Drop files here</font>
-                    </span>
-                </file-drop>
+            <div fxFlex="100%">
+                <p align="left" id="demo"></p>
             </div>
         </div>
 
@@ -47,12 +43,6 @@
                 <form novalidate class="simple-form">
                     <textarea id="rightTextArea" class="form-control" [(ngModel)]="rightTextArea" name="rightTextArea"></textarea>
                 </form>
-            </div>
-        </div>
-
-        <div flex fxlayout="row">
-            <div fxFlex="100%">
-                <p align="left" id="demo"></p>
             </div>
         </div>
 
